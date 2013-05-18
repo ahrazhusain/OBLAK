@@ -20,7 +20,7 @@ def cutit(s,n):
 def check_keyword(keyword):
            
                 try :
-                     con = psycopg2.connect(host='192.73.234.205',database='oblakdb',user='postgres',password='12345')
+                     con = psycopg2.connect(host=$host,database=$db',user=$user,password=$pass)
                      cur = con.cursor()
                      cur.execute("select * from information_schema.tables where table_name=%s", (keyword,))
                      val = bool(cur.rowcount)
@@ -54,7 +54,7 @@ def new_keyword(keyword):
                 #print "Query:",quer
 
                 try:
-                            con = psycopg2.connect(host='192.73.234.205',database='oblakdb',user='postgres',password='12345')    
+                            con = psycopg2.connect(host=$host,database=$db',user=$user,password=$pass)    
                             cur = con.cursor()
                             cur.execute(quer)
                             con.commit()
@@ -64,7 +64,7 @@ def new_keyword(keyword):
 
 
                
-                con = psycopg2.connect(host='192.73.234.205',database='oblakdb',user='postgres',password='12345')    
+                con = psycopg2.connect(host=$host,database=$db',user=$user,password=$pass)   
                 cur = con.cursor()
                 cur.execute("select * from o_main_index_9716248472_o")
                 con.commit()
@@ -99,7 +99,7 @@ def new_entry(table,url,orank,tmp,u,lati,longi):
 
     try:
          
-        con = psycopg2.connect(host='192.73.234.205',database='oblakdb',user='postgres',password='12345')
+        con = psycopg2.connect(host=$host,database=$db',user=$user,password=$pass)
         cur = con.cursor()
         quer="select * from "
         quer=quer+table
@@ -177,7 +177,7 @@ def check_ambiguity(table,url,otags):
 
     try:
          
-        con = psycopg2.connect(host='192.73.234.205',database='oblakdb',user='postgres',password='12345')
+        con = psycopg2.connect(host=$host,database=$db',user=$user,password=$pass)
         cur = con.cursor()
         
 
